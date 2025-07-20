@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Step</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="content" style="display: none;">
+    <header class="animated-header">
+      <h1>MY FIRST WEBSITE</h1>
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I'm Alen, an aspiring web designer and future exporter!
+        I've so many dreams. I wanna achieve it. I'm gonna get it.
+        Also one dream, becoming a rapper ❤️‍🔥❤️‍🔥🎤🔥,
+        I have a friend named Kevin John Mani 🫂.
+      </p>
+    </section>
+
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <div class="slider">
+        <img src="Images/image 2.jpg" class="slide active">
+         <img src="Images/image 3.jpg" class="slide">
+          <img src="Images/image 4.webp" class="slide">
+        </div>
+    </section>
+
+    <button class="feedback-btn">Give Feedback</button>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div> <!-- Close #content -->
+
+  <!-- ✅ Script goes here -->
+  <script>
+    // Loader
+    window.addEventListener('load', function () {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    });
+
+    // Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+  </script>
+</body>
+</html>
